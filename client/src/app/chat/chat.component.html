@@ -1,0 +1,11 @@
+<h1>SOCKET CHAT</h1>
+
+<p><button (click)="button_click()">Click</button> {{ click_count }} <button (click)="annoy()">Annoy</button></p> 
+<p>I am: <input type="text" name="user" [(ngModel)]="user"></p>
+<div>
+	<p *ngFor="let message of messages"><em>{{message.user}} said:</em> {{ message.message }} ({{message.timestamp | date:"short"}})</p>
+</div>
+
+<form (submit)="send_message()">
+	<input type="text" name="new_message" [(ngModel)]="message.message" > <input type="submit">
+</form>
